@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const config = require("./config");
 
 //const data = 'Hi';
 app.set("view engine", "ejs");
@@ -14,4 +15,6 @@ app.post("/create", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3000, () => console.log("Example app listening on port 3000!"));
+app.listen(config.PORT, () =>
+  console.log(`Example app listening on port ${config.PORT}!`)
+);
